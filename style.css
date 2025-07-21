@@ -1,0 +1,300 @@
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background: #fefefe;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero {
+  background: linear-gradient(to bottom, #f8ecff, #ffffff);
+  position: relative;
+  padding: 60px 20px;
+}
+
+.overlay {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #6a1b9a;
+  margin-bottom: 20px;
+}
+
+.wedding-video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.heart-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: #e91e63;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.invitation {
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.date, .venue, .wishes {
+  background-color: #fff;
+}
+
+.date h2, .venue h2, .wishes h2 {
+  color: #6a1b9a;
+  font-size: 2rem;
+}
+
+#countdown {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #6a1b9a;
+}
+
+.venue-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.venue-name {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #6a1b9a;
+  color: #fff;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #501073;
+}
+
+.wishes p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+@media (max-width: 600px) {
+  .names {
+    font-size: 2.2rem;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .invitation {
+    font-size: 1rem;
+  }
+  .wishes p {
+    font-size: 1rem;
+  }
+  .heart-button {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+/* style.css
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff8f2;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.header {
+  padding: 40px 20px 20px;
+  background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+}
+
+.initials {
+  font-size: 30px;
+  letter-spacing: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.heart {
+  font-size: 32px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  margin: 10px auto;
+}
+
+.heart:hover {
+  transform: scale(1.2);
+}
+
+.click-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.invite-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.video-section video {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  margin: 20px auto;
+  display: block;
+}
+
+.date-section {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.date-section h2 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.event-date, .event-time {
+  font-size: 22px;
+  margin: 5px 0;
+}
+
+.venue-section {
+  padding: 30px 20px;
+  background-color: #f2f2f2;
+}
+
+.venue-section h2 {
+  font-size: 26px;
+}
+
+.venue-photo {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.venue-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.map-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 24px;
+  background-color: #6a1b9a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.map-button:hover {
+  background-color: #4a0f6b;
+}
+
+.wishes-section {
+  padding: 40px 20px;
+  background-color: #fef9ff;
+}
+
+.wishes-section h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.wish-text {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 18px;
+  color: #444;
+}
+
+.footer {
+  padding: 20px;
+  font-size: 14px;
+  color: #666;
+  background-color: #eee;
+}
+
+@media (max-width: 600px) {
+  .names {
+    font-size: 32px;
+  }
+  .event-date, .event-time {
+    font-size: 18px;
+  }
+  .wish-text {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  .venue-name {
+    font-size: 16px;
+  }
+} */

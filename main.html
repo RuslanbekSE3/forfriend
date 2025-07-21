@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приглашение на свадьбу</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="overlay">
+      <h1 class="names">Aqilbek & Aziza</h1>
+      <video id="wedding-video" class="wedding-video" poster="img/preview.jpg" onclick="toggleVideo()">
+        <source src="video/wedding.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+      <button id="music-toggle" class="heart-button" onclick="toggleMusic()">❤️</button>
+      <p class="invitation">С любовью приглашаем Вас разделить с нами особенный день — день нашей свадьбы.</p>
+    </div>
+  </section>
+
+  <section class="date">
+    <h2>Дата</h2>
+    <p>23.07.2025</p>
+    <p>18:00</p>
+    <div id="countdown"></div>
+  </section>
+
+  <section class="venue">
+    <h2>Место проведения</h2>
+    <img src="img/venue.png" alt="SHADEL ресторан" class="venue-img">
+    <p class="venue-name">Республика Каракалпакстан <p>город Нукус</p> <p>ресторан "SHADEL"</p> </p>
+    <a href="https://yandex.uz/maps/10337/nukus/?ll=59.607160%2C42.504559&mode=poi&poi%5Bpoint%5D=59.607195%2C42.504272&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D163204315681&z=19.39" class="btn" target="_blank">Открыть на карте</a>
+  </section>
+
+  <section class="wishes">
+    <h2>Пожелание для гостей</h2>
+    <p>
+      Мы будем искренне рады видеть вас рядом в наш самый важный день. Пусть это торжество принесёт тепло в сердце и радость в душу. 
+      Мы мечтали о свадьбе, полной любви, света и друзей — и вы часть этой мечты. Поддержите нас в этот волнующий момент. 
+      Ждём вас с нетерпением!
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; Aqilbek & Aziza — 2025</p>
+  </footer>
+
+  <audio id="bg-music" loop>
+    <source src="music/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const countdown = () => {
+      const endDate = new Date("2025-07-23T18:00:00").getTime();
+      const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const t = endDate - now;
+
+        if (t <= 0) {
+          clearInterval(timer);
+          document.getElementById("countdown").innerHTML = "Свадьба началась!";
+        } else {
+          const days = Math.floor(t / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((t % (1000 * 60)) / 1000);
+          document.getElementById("countdown").innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
+        }
+      }, 1000);
+    }
+    countdown();
+
+    const music = document.getElementById("bg-music");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (!isPlaying) {
+        music.play();
+        document.getElementById("music-toggle").textContent = '🔇';
+      } else {
+        music.pause();
+        document.getElementById("music-toggle").textContent = '❤️';
+      }
+      isPlaying = !isPlaying;
+    }
+
+    function toggleVideo() {
+      const video = document.getElementById("wedding-video");
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+      music.pause();
+      document.getElementById("music-toggle").textContent = '❤️';
+      isPlaying = false;
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aqilbek & Aziza — Свадебное приглашение</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="bg-music" loop preload="auto">
+    <source src="music/music.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
+
+  <header class="header">
+    <div class="initials">A | A</div>
+    <div class="names">Aqilbek + Aziza</div>
+    <div class="heart" onclick="playMusic()">❤️</div>
+    <p class="click-text">(нажми на сердечко)</p>
+    <p class="invite-text">Мы приглашаем вас на нашу свадьбу</p>
+  </header>
+
+  <section class="video-section">
+    <video id="couple-video" poster="img/cover.jpg" controls>
+      <source src="video/IMG_5636.MOV" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+    </video>
+  </section>
+
+  <section class="date-section">
+    <h2>Дата</h2>
+    <p class="event-date">23.07.2025</p>
+    <p class="event-time">18:00</p>
+  </section>
+
+  <section class="venue-section">
+    <h2>Место проведения</h2>
+    <img src="img/venue.png" alt="SHADEL restaurant" class="venue-photo">
+    <p class="venue-name">SHADEL ресторан</p>
+    <a href="https://yandex.uz/maps/10337/nukus/?ll=59.607160%2C42.504559&mode=poi&poi%5Bpoint%5D=59.607195%2C42.504272&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D163204315681&z=19.39" class="map-button" target="_blank">Открыть на карте</a>
+  </section>
+
+  <section class="wishes-section">
+    <h2>Пожелание гостям</h2>
+    <p class="wish-text">
+      Дорогие гости! Мы с трепетом ждём этот особенный день и будем счастливы разделить его с вами. Ваша улыбка — наше вдохновение, а ваше присутствие — наше счастье. Пусть этот вечер станет незабываемым для каждого. Добро пожаловать на нашу свадьбу!
+    </p>
+  </section>
+
+  <footer class="footer">
+    <p>© Aqilbek & Aziza, 2025</p>
+  </footer>
+
+  <script>
+    function playMusic() {
+      const audio = document.getElementById("bg-music");
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
+</body>
+</html> -->
